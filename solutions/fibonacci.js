@@ -12,3 +12,12 @@ function fibs(n) {
 
   return f;
 }
+
+function fibsRec(n, f=0, fibs=[0,1]) {
+  if (n == 2) return fibs;
+  if (n == 0) return [];
+  if (n == 1) return [0]
+  
+  return fibsRec(n-1, f+1, fibs.concat([fibs[f] + fibs[f+1]]));
+}
+
